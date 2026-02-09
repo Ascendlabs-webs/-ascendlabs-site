@@ -380,11 +380,11 @@ footer{
     left:50%;
     right:auto;
     width:auto;
-    max-width:85vw;
+    max-width:60vw;
     transform:translateX(-50%);
-    padding:8px 12px;
-    font-size:13px;
-    border-radius:22px;
+    padding:6px 10px;
+    font-size:12px;
+    border-radius:20px;
     box-shadow:0 0 12px rgba(150,130,255,.35);
     text-align:center;
   }
