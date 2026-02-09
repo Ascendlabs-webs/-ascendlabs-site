@@ -364,15 +364,7 @@ footer{
 
   #activity{
     left:14px;
-    bottom:auto;
-    top:72px;
-    font-size:12px;
-    padding:10px 14px;
-    max-width:78vw;
-    line-height:1.3;
-    background:rgba(5,8,20,.7);
-    border:1px solid rgba(255,255,255,.2);
-    box-shadow:0 12px 26px rgba(0,0,0,.45);
+    display:none;
   }
 }
 
@@ -396,9 +388,7 @@ footer{
   }
 
   #activity{
-    top:64px;
-    bottom:auto;
-    max-width:84vw;
+    display:none;
   }
 }
 
