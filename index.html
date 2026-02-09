@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>AscendLabs — Prompt Pack</title>
@@ -35,26 +37,30 @@
 <body>
 <canvas id="particles"></canvas>
 <header>
-<h1>AscendLabs.in</h1>
+<div class="brand">
+  <img src="assets/ascendlabs-logo.jpg" alt="AscendLabs logo" class="brand-logo">
+  <h1>AscendLabs.in</h1>
+</div>
 <nav>
 <a href="#features">Features</a>
 <a href="#pricing">Pricing</a>
 <a href="#faq">FAQ</a>
 </nav>
 </header>
-<section class="hero">
+<section class="hero depth-1">
 <h2>The Ultimate AI Prompt Pack</h2>
+<div id="hero3d"></div>
 <div class="timer" id="countdown"></div>
 <p>1000+ structured prompts engineered for productivity, marketing, and automation.</p>
 <a class="btn" href="https://topmate.io/ascendlabs/1949971" target="_blank">Get Instant Access</a>
 </section>
-<section id="features" class="features">
+<section id="features" class="features depth-2">
 <div class="card"><h4>1000+ Prompts</h4><p>Copy‑paste ready templates built for real workflows.</p></div>
 <div class="card"><h4>Organized Categories</h4><p>Navigate easily across domains and use‑cases.</p></div>
 <div class="card"><h4>Instant Results</h4><p>Accelerate outputs with structured prompt logic.</p></div>
 <div class="card"><h4>Lifetime Access</h4><p>Download once and receive future upgrades.</p></div>
 </section>
-<section id="pricing" class="pricing">
+<section id="pricing" class="pricing depth-1">
 <div class="price-box">
 <h2>Launch Pricing</h2>
 <div class="strike">₹499</div>
@@ -63,12 +69,23 @@
 <a class="btn" href="https://topmate.io/ascendlabs/1949971" target="_blank">Buy Now</a>
 </div>
 </section>
-<section class="testimonials">
-<div class="quote">“Saved me hours daily — insane ROI.”<br>— Early Buyer</div>
-<div class="quote">“Structured prompts that actually work.”<br>— Creator</div>
-<div class="quote">“Best ₹99 I spent this year.”<br>— Early Buyer</div>
+<section class="testimonials depth-3">
+<div class="carousel">
+<div class="quote active">
+“Saved me hours daily — insane ROI.”
+<br>— Early Buyer
+</div>
+<div class="quote">
+“Structured prompts that actually work.”
+<br>— Creator
+</div>
+<div class="quote">
+“Best ₹99 I spent this year.”
+<br>— Early Buyer
+</div>
+</div>
 </section>
-<section id="faq" class="faq">
+<section id="faq" class="faq depth-2">
 <h3>FAQ</h3>
   <details>
   <summary>Are these prompts beginner-friendly?</summary>
@@ -112,6 +129,7 @@
 <details><summary>How do I receive the prompts?</summary><p>Instant access after purchase confirmation.</p></details>
 <details><summary>Is this one‑time?</summary><p>Yes — lifetime access.</p></details>
 </section>
+<div id="activity"></div>
 <footer>© 2026 AscendLabs.in</footer>
 <a class="sticky-cta" href="https://topmate.io/ascendlabs/1949971" target="_blank">Buy — ₹99</a>
 <script>
@@ -128,6 +146,14 @@ document.getElementById("countdown").innerText=`Launch Offer Ends In ${h}h ${m}m
 const c=document.getElementById('particles');const ctx=c.getContext('2d');c.width=innerWidth;c.height=innerHeight;let p=Array.from({length:60},()=>({x:Math.random()*c.width,y:Math.random()*c.height,vx:Math.random()-0.5,vy:Math.random()-0.5}));
 function anim(){ctx.clearRect(0,0,c.width,c.height);ctx.fillStyle='rgba(120,180,255,0.7)';p.forEach(pt=>{pt.x+=pt.vx;pt.y+=pt.vy;if(pt.x<0||pt.x>c.width)pt.vx*=-1;if(pt.y<0||pt.y>c.height)pt.vy*=-1;ctx.beginPath();ctx.arc(pt.x,pt.y,2,0,6.28);ctx.fill();});requestAnimationFrame(anim);}anim();
 </script>
+<script src="main.js"></script>
+<script src="three-bg.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/examples/js/postprocessing/EffectComposer.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/examples/js/postprocessing/RenderPass.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/examples/js/postprocessing/UnrealBloomPass.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/examples/js/postprocessing/ShaderPass.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/examples/js/shaders/CopyShader.js"></script>
+<script src="hero3d.js"></script>
+<script src="aurora.js"></script>
 </body>
 </html>
-
