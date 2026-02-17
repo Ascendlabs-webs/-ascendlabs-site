@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AscendLabs — Prompt Pack</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+  <style>
+    :root {--bg1:#0b0f2b;--bg2:#130b2b;--accent:#6df0ff;--accent2:#9f6bff;--glass:rgba(255,255,255,0.08);}    
+    *{box-sizing:border-box;margin:0;padding:0;font-family:"Inter",sans-serif}
+    body{overflow-x:hidden;background:linear-gradient(135deg,var(--bg1),var(--bg2));color:#fff;min-height:100vh}
+    canvas{position:fixed;top:0;left:0;z-index:-1}
+    header{display:flex;justify-content:space-between;align-items:center;padding:20px 8%;position:sticky;top:0;background:rgba(0,0,0,0.25);backdrop-filter:blur(10px);z-index:1000}
+    header h1{font-weight:800;font-size:22px}
+    nav a{margin-left:20px;text-decoration:none;color:#ccc}
+    nav a:hover{color:#fff}
+    .hero{text-align:center;padding:80px 10% 60px}
+    .hero h2{font-size:48px;font-weight:800;margin-bottom:20px;background:linear-gradient(90deg,var(--accent),var(--accent2));-webkit-background-clip:text;color:transparent}
+    .hero p{color:#aaa;font-size:18px;margin-bottom:20px}
+    .btn{background:linear-gradient(90deg,var(--accent2),var(--accent));padding:14px 28px;border-radius:40px;color:#000;font-weight:600;text-decoration:none;box-shadow:0 0 20px rgba(140,120,255,0.5)}
+    .timer{font-size:22px;margin-bottom:20px;color:#9adfff}
+    .features{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px;padding:40px 8%}
+    .card{background:var(--glass);backdrop-filter:blur(12px);border-radius:18px;padding:24px;border:1px solid rgba(255,255,255,0.1)}
+    .pricing{text-align:center;padding:70px 8%}
+    .price-box{display:inline-block;background:var(--glass);padding:40px;border-radius:18px;border:1px solid rgba(255,255,255,0.1)}
+    .strike{text-decoration:line-through;color:#aaa}
+    .testimonials{padding:60px 8%;display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px}
+    .quote{background:var(--glass);padding:20px;border-radius:12px;border:1px solid rgba(255,255,255,0.1)}
+    .faq{padding:50px 8%;max-width:900px;margin:auto}
+    details{margin-bottom:10px;background:var(--glass);padding:12px;border-radius:8px}
+    footer{text-align:center;padding:30px;color:#888}
+    .sticky-cta{position:fixed;bottom:20px;right:20px;background:linear-gradient(90deg,var(--accent2),var(--accent));color:#000;padding:14px 20px;border-radius:30px;text-decoration:none;font-weight:700}
+  </style>
+</head>
+<body>
+<canvas id="particles"></canvas>
+<header>
+<div class="brand">
+  <img src="ascendlabs-logo.jpg" alt="AscendLabs logo" class="brand-logo">
+  <h1>AscendLabs.in</h1>
+</div>
+<nav>
+<a href="#features">Features</a>
+<a href="#pricing">Pricing</a>
+<a href="#faq">FAQ</a>
+</nav>
+</header>
+<section class="hero depth-1">
+<h2>The Ultimate AI Prompt Pack</h2>
+<div id="hero3d"></div>
+<div class="timer" id="countdown"></div>
+<p>1000+ structured prompts engineered for productivity, marketing, and automation.</p>
+<a class="btn" href="https://topmate.io/ascendlabs/1949971" target="_blank">Get Instant Access</a>
+</section>
+<section id="features" class="features depth-2">
+<div class="card"><h4>1000+ Prompts</h4><p>Copy‑paste ready templates built for real workflows.</p></div>
+<div class="card"><h4>Organized Categories</h4><p>Navigate easily across domains and use‑cases.</p></div>
+<div class="card"><h4>Instant Results</h4><p>Accelerate outputs with structured prompt logic.</p></div>
+<div class="card"><h4>Lifetime Access</h4><p>Download once and receive future upgrades.</p></div>
+</section>
+<section id="pricing" class="pricing depth-1">
+<div class="price-box">
+<h2>Launch Pricing</h2>
+<div class="strike">₹499</div>
+<h3>₹99</h3>
+<p>Lifetime access</p><br>
+<a class="btn" href="https://topmate.io/ascendlabs/1949971" target="_blank">Buy Now</a>
+</div>
+</section>
+<section class="testimonials depth-3">
+<div class="carousel">
+<div class="quote active">
+“Saved me hours daily — insane ROI.”
+<br>— Early Buyer
+</div>
+<div class="quote">
+“Structured prompts that actually work.”
+<br>— Creator
+</div>
+<div class="quote">
+“Best ₹99 I spent this year.”
+<br>— Early Buyer
+</div>
+</div>
+</section>
+<section id="faq" class="faq depth-2">
+<h3>FAQ</h3>
+  <details>
+  <summary>Are these prompts beginner-friendly?</summary>
+  <p>Yes. The pack is structured so both beginners and advanced users can immediately apply the prompts and improve output quality.</p>
+</details>
+
+<details>
+  <summary>Which AI tools are supported?</summary>
+  <p>The prompts are compatible with ChatGPT, Claude, Gemini, and most modern LLM platforms.</p>
+</details>
+
+<details>
+  <summary>Will I receive updates?</summary>
+  <p>Yes — future prompt additions and refinements are included with lifetime access.</p>
+</details>
+
+<details>
+  <summary>Can I use these for commercial work?</summary>
+  <p>Absolutely. You may use the prompts in client projects, business workflows, or content creation.</p>
+</details>
+
+<details>
+  <summary>Is there a refund policy?</summary>
+  <p>Please refer to the checkout platform policy. If you encounter delivery issues, contact AscendLabs support.</p>
+</details>
+
+<details>
+  <summary>How large is the prompt library?</summary>
+  <p>The pack contains 1000+ structured prompts across productivity, marketing, business, and automation categories.</p>
+</details>
+
+<details>
+  <summary>Do I need technical knowledge?</summary>
+  <p>No technical background is required — prompts are copy-paste ready with usage guidance.</p>
+</details>
+
+<details>
+  <summary>How quickly will I see results?</summary>
+  <p>Most users notice improved AI outputs immediately after applying structured prompts.</p>
+</details>
+<details><summary>How do I receive the prompts?</summary><p>Instant access after purchase confirmation.</p></details>
+<details><summary>Is this one‑time?</summary><p>Yes — lifetime access.</p></details>
+</section>
+<div id="activity"></div>
+<footer>© 2026 AscendLabs.in</footer>
+<a class="sticky-cta" href="https://topmate.io/ascendlabs/1949971" target="_blank">Buy — ₹99</a>
+<script>
+// Countdown timer 48h
+const end=new Date(Date.now()+48*60*60*1000);
+setInterval(()=>{
+const diff=end-new Date();
+const h=Math.floor(diff/3.6e6);
+const m=Math.floor(diff%3.6e6/6e4);
+const s=Math.floor(diff%6e4/1e3);
+document.getElementById("countdown").innerText=`Launch Offer Ends In ${h}h ${m}m ${s}s`;
+},1000);
+// particles
+const c=document.getElementById('particles');const ctx=c.getContext('2d');c.width=innerWidth;c.height=innerHeight;let p=Array.from({length:60},()=>({x:Math.random()*c.width,y:Math.random()*c.height,vx:Math.random()-0.5,vy:Math.random()-0.5}));
+function anim(){ctx.clearRect(0,0,c.width,c.height);ctx.fillStyle='rgba(120,180,255,0.7)';p.forEach(pt=>{pt.x+=pt.vx;pt.y+=pt.vy;if(pt.x<0||pt.x>c.width)pt.vx*=-1;if(pt.y<0||pt.y>c.height)pt.vy*=-1;ctx.beginPath();ctx.arc(pt.x,pt.y,2,0,6.28);ctx.fill();});requestAnimationFrame(anim);}anim();
+</script>
+<script src="main.js"></script>
+<script src="three-bg.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/examples/js/postprocessing/EffectComposer.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/examples/js/postprocessing/RenderPass.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/examples/js/postprocessing/UnrealBloomPass.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/examples/js/postprocessing/ShaderPass.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/examples/js/shaders/CopyShader.js"></script>
+<script src="hero3d.js"></script>
+<script src="aurora.js"></script>
+</body>
+</html>
